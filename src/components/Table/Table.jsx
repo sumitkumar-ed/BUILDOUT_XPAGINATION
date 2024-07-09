@@ -17,7 +17,7 @@ const Table = () => {
         setData(data);
       } catch (error) {
         setError(error.message);
-        alert(error.message);
+        alert("failed to fetch data");
       }
     };
     getData();
