@@ -13,14 +13,13 @@ const Table = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const result = await fetchData();
-        setData(result);
+        const data = await fetchData();
+        setData(data);
       } catch (error) {
         setError(error.message);
-        alert('Failed to fetch data. Please try again later.');
+        alert(error.message);
       }
     };
-
     getData();
   }, []);
 
@@ -63,13 +62,9 @@ const Table = () => {
         </tbody>
       </table>
       <div className="pagination">
-        <button onClick={handlePrevious} disabled={currentPage === 1}>
-          Previous
-        </button>
+        <button onClick={handlePrevious}>Previous</button>
         <span>{currentPage}</span>
-        <button onClick={handleNext} disabled={currentPage === totalPages}>
-          Next
-        </button>
+        <button onClick={handleNext}>Next</button>
       </div>
     </div>
   );
