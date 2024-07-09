@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { fetchData } from '../../api/api';
-import './Table.css';
+import React, { useEffect, useState } from "react";
+import { fetchData } from "../../api/api";
+import "./Table.css";
 
 const Table = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const rowsPerPage = 10;
   const totalPages = Math.ceil(data.length / rowsPerPage);
